@@ -173,6 +173,8 @@ const inputDate = {
     "convert_to": 'meter'
 }
 
+console.log(inputDate)
+
 const outputDate = { "unit": "", "value": "" };
 
 input.oninput = getDate;
@@ -185,7 +187,12 @@ function getDate() {
     inputDate.distance.value = input.value;
     inputDate.distance.unit = select1.value;
     inputDate.convert_to = select2.value;
+    console.log(inputDate)
 }
+
+
+
+
 
 
 function convert() {
@@ -193,7 +200,7 @@ function convert() {
         const unit = inputDate.distance.unit;
         const inputUnit = inputDate.convert_to;
         const inputValue = inputDate.distance.value;
-        console.log(date[unit][inputUnit]["value"])
+      
         if (+inputValue && date[unit] && date[unit][inputUnit] && date[unit][inputUnit]["value"]) {
             console.log(+inputValue)
             console.log(date[unit][inputUnit]["value"])
